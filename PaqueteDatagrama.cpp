@@ -16,7 +16,6 @@ PaqueteDatagrama::PaqueteDatagrama(unsigned int longit){
 
 PaqueteDatagrama::~PaqueteDatagrama(){
     delete [] datos;
-    delete [] ip;
     longitud = 0;
     puerto = 0;
 }
