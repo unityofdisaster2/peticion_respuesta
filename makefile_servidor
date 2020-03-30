@@ -1,5 +1,5 @@
 servidor: servidor.cpp Respuesta.o SocketDatagrama.o PaqueteDatagrama.o
-	g++ servidor.cpp Respuesta.o SocketDatagrama.o PaqueteDatagrama.o -o servidor
+	g++ servidor.cpp Respuesta.o SocketDatagrama.o PaqueteDatagrama.o -o servidor_app
 	
 Respuesta.o: Respuesta.cpp SocketDatagrama.o PaqueteDatagrama.o Respuesta.h
 	g++ Respuesta.cpp -c 	

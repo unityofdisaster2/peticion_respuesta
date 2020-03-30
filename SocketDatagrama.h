@@ -11,9 +11,13 @@ class SocketDatagrama {
 		int recibe(PaqueteDatagrama & p);
 		//Envía un paquete tipo datagrama desde este socket
 		int envia(PaqueteDatagrama & p);
+
+		int recibeTimeout(PaqueteDatagrama &p, time_t segundos, suseconds_t microsegundos);
+		
 	private:
 		struct sockaddr_in direccionLocal;
 		struct sockaddr_in direccionForanea;
+		struct timeval timeout;
 		int s; //ID socket
 }; 
 #endif

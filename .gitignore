@@ -4,3 +4,5 @@
 *.pdf
 servidor/
 cliente/
+cliente_app
+servidor_app

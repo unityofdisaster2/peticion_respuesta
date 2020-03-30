@@ -1,5 +1,5 @@
 cliente: cliente.cpp Solicitud.o SocketDatagrama.o PaqueteDatagrama.o
-	g++ cliente.cpp Solicitud.o SocketDatagrama.o PaqueteDatagrama.o -o cliente
+	g++ cliente.cpp Solicitud.o SocketDatagrama.o PaqueteDatagrama.o -o cliente_app
 	
 Solicitud.o: Solicitud.cpp SocketDatagrama.o PaqueteDatagrama.o Solicitud.h
 	g++ Solicitud.cpp -c 	

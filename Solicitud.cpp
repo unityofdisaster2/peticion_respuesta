@@ -23,8 +23,19 @@ char * Solicitud::doOperation(char *IP, int puerto, int operId, char *arguments)
 
     // se espera la respuesta del servidor que contendra los datos procesados
     // con la funcion seleccionada (suma)
-    int rec = socketLocal->recibe(recibido);
-    if(rec){
+    //int rec = socketLocal->recibe(recibido);
+
+    int num_solicitudes = 0;
+    int rec = 0;
+
+    do{
+        rec = socketLocal->recibeTimeout(recibido,2,500000);
+        if(rec == -1){
+            num_solicitudes++;
+        }
+    }while(num_solicitudes < 7 && rec != 1);
+    printf("que tiene rec:  %d\n",rec);
+    if(rec == 1){
         printf("se recibe respuesta de servidor\n");
         printf("direccion: %s\n",recibido.obtieneDireccion());
         printf("puerto: %d\n",recibido.obtienePuerto());
