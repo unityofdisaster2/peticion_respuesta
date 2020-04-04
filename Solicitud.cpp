@@ -34,7 +34,6 @@ char * Solicitud::doOperation(char *IP, int puerto, int operId, char *arguments)
             num_solicitudes++;
         }
     }while(num_solicitudes < 7 && rec != 1);
-    printf("que tiene rec:  %d\n",rec);
     if(rec == 1){
         printf("se recibe respuesta de servidor\n");
         printf("direccion: %s\n",recibido.obtieneDireccion());
